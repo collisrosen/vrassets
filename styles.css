@@ -1,0 +1,147 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: black;
+    color: white;
+    line-height: 1.6;
+    cursor: url('https://cdn.jsdelivr.net/gh/olgabelikov/cursors@master/css/cursors/hand.cur'), auto; /* Custom cursor */
+}
+
+.navbar {
+    position: sticky;
+    top: 0;
+    background-color: #333;
+    padding: 10px 0;
+    text-align: center;
+    z-index: 100;
+    width: 100%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+}
+
+.navbar ul li {
+    margin: 0 15px;
+}
+
+.navbar ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 22px;
+}
+
+.navbar ul li a:hover {
+    text-decoration: underline;
+}
+
+section {
+    padding: 20px;
+    margin: 20px;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 45px;
+}
+
+/* New container box around all downloads */
+.download-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #222;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.7); /* Container shadow */
+    animation: glow 1.5s ease-in-out infinite alternate; /* Glowing effect */
+}
+
+/* Keyframe animation for glowing effect */
+@keyframes glow {
+    0% {
+        box-shadow: 0 0 15px rgba(255, 255, 255, 0.4), 0 0 30px rgba(255, 255, 255, 0.2);
+    }
+    100% {
+        box-shadow: 0 0 25px rgba(255, 255, 255, 0.6), 0 0 40px rgba(255, 255, 255, 0.3);
+    }
+}
+
+/* Flexbox grid layout for the items */
+.grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly; /* Centers the items with even space */
+    gap: 15px; /* Reduced gap for tighter spacing */
+}
+
+.item {
+    width: 22%; /* Controls the size of the items */
+    background-color: #444;
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.7);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    opacity: 0;
+    animation: fadeIn 0.5s forwards;
+}
+
+.item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.9), 0 0 15px 5px rgba(255, 255, 255, 0.3);
+}
+
+/* Flexbox container for the preview images */
+.preview {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: gray;
+    height: 150px; /* Set a fixed height for preview box */
+    margin-bottom: 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.6); /* Shadow around preview */
+    transition: box-shadow 0.3s ease; /* Glowing shadow on hover */
+}
+
+.preview img {
+    max-width: 100%; /* Ensures the image fills the width of its container */
+    max-height: 100%; /* Ensures the image fills the height of its container */
+    object-fit: cover; /* Ensures the image covers the area without distorting */
+    border-radius: 8px; /* Optional for rounded corners */
+}
+
+.preview:hover {
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.9), 0 0 15px 5px rgba(255, 255, 255, 0.3); /* Glowing shadow */
+}
+
+button {
+    background-color: #666;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+button:hover {
+    background-color: #888;
+    transform: scale(1.1); /* Slight zoom effect on hover */
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
